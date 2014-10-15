@@ -21,6 +21,17 @@ public class MainApp {
         
         da.etwasKritisches();
         
-    }
     
+    
+    DemoKlasseB dkb = new DemoKlasseB();
+    
+    try{
+        dkb.ichWerfeWas();
+    }
+    catch (Exception e)
+    {
+    
+        System.err.println(e.getMessage() );
+    }
+    }
 }
