@@ -30,6 +30,34 @@ public class KlasseSteffen {
         
         return "Die Klasse " + this.getClass().getSimpleName() + " sagt " + this.meinWert;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        // reflexivität
+        
+        if(this == obj)
+            return true;
+        
+        //der Vergleich mit null mus FALSE liefern
+        
+        if(obj == null)
+            return false;
+        
+        // Test auf Vergleichbarkeit(Objekt müssen von der gleichen Klasse sein)
+        
+        if(this.getClass() != obj.getClass())
+            return false;
+        
+        //Test aller Attribute
+        
+        if( this.meinWert != ((KlasseSteffen)obj).meinWert )
+            return false;
+        
+        //nach dem Test aller Attribute steht die Gleicheit fest
+        return true;
+    }
+    
+    
     
     
 
