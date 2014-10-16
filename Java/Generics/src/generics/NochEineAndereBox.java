@@ -8,6 +8,7 @@ package generics;
 /**
  *
  * @author Oliver Stabenow <starsegen1987@hotmail.de>
+ * @param <T>
  */
 public class NochEineAndereBox <T extends Number>
 {
