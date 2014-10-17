@@ -21,9 +21,20 @@ public class MainApp  extends Car{
      int distance = (int) ((Math.random()*500000)+1);
         System.out.println(a + "Kilometerstand" + distance);
      
-     Car opel = new Car();
+        int t = (int) ((Math.random()*10));
+        
+        switch(t){
+             
+        case 0:
+            marke = Opel;
+        break;    
+        
+        }
+        
+        
+     Car marke.a = new Car();
      
-     opel.startEngine();
+     this.startEngine();
      if(distance > 400000){
          opel = new brokenCar();
          System.out.println( a + "ist jetzt kaputt");
