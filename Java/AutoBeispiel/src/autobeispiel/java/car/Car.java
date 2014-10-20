@@ -5,14 +5,16 @@
  */
 package autobeispiel.java.car;
 
+import java.util.Comparator;
+
 /**
  *
  * @author Oliver Stabenow <starsegen1987@hotmail.de>
  */
-public class Car implements Vehicle {
+public class Car implements Vehicle, Comparator<Car>, Comparable<Car> {
 
     private boolean engineStatus;
-    private int milage;
+    public int milage;
 
     public Car() {
 
@@ -103,4 +105,31 @@ public class Car implements Vehicle {
         return result & 0x7fffffff;
         
     }
+
+    @Override
+    public int compare(Car o1, Car o2) {
+        if(o1.milage == o2.milage){
+            return 0;
+        }
+        
+        if(o1.milage > o2.milage){
+            return 1;
+        }
+        
+        return -1;
+    }
+
+    @Override
+    public int compareTo(Car o) {
+   if(this.milage == ((Car)o).milage){
+       return 0;
+   }
+   
+   if(this.milage >  ((Car) o).milage){
+        return 1;
+    }
+        return -1;
+       
+       }
+    
 }
