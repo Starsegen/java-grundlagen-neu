@@ -26,17 +26,16 @@ public class MainApp  extends Car{
         switch(t){
              
         case 0:
-            marke = Opel;
+            Car marke[a] = new Car;
         break;    
         
         }
         
         
-     Car marke.a = new Car();
      
      this.startEngine();
      if(distance > 400000){
-         opel = new brokenCar();
+         Car this.Car = new brokenCar();
          System.out.println( a + "ist jetzt kaputt");
      }
     }
