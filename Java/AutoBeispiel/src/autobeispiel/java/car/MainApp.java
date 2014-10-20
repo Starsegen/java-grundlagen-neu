@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package autobeispiel.java.car;
-import package autobeispielcomparator;
 
 import java.util.ArrayList;
 import java.util.HashSet;
