@@ -33,6 +33,16 @@ public class MainApp {
         k.einschreiben(g);
         
         k.auflisten();
+        System.out.println("____________________________________");
+        k.ausschreiben(d);
+        System.out.println("____________________________________");
+        
+        k.auflisten();
+        System.out.println("____________________________________");
+        k.einschreiben(d);
+        
+        k.auflisten();
+        System.out.println("____________________________________");
     }
     
 }
