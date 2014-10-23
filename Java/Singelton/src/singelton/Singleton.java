@@ -11,4 +11,32 @@ package singelton;
  */
 public class Singleton {
     
+    private static Singleton instance = null;
+    
+    private Singleton(){
+        
+        
+        
+    }
+    /**
+     * Die Kopiermethode wird geschützt
+     * 
+     * @return 
+     */
+    @Override
+    protected Object clone()throws CloneNotSupportedException {
+        
+        return new CloneNotSupportedException();
+    }
+    
+    public static Singleton getInstance(){
+        
+        if(instance == null)
+            instance = new Singleton();
+        return instance;
+    
+    
+    }
+    
+    
 }
