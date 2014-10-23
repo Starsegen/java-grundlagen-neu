@@ -15,27 +15,19 @@ public class MainApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       
-        
-        
+
         Fabrik f = new BarbieFabrik();
-        
+
         Spielzeug sp = f.fertigen();
-        
+
         sp.spielen();
-        
-        
-        
+
         FabrikMethode fm = new FabrikMethode();
-        
-        
-        sp= fm.fertigen("pistole");
-        
+
+        sp = fm.fertigen("pistole");
+
         sp.spielen();
-        
-        
-        
-        
+
     }
-    
+
 }
