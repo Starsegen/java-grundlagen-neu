@@ -35,6 +35,7 @@ public class DebuggerLogfile extends AbstrakteKomponente{
             
         } catch (IOException ex) {
             Logger.getLogger(DebuggerLogfile.class.getName()).log(Level.SEVERE, null, ex);
+            
         } finally {
             if( ausgabe != null) {
                 ausgabe.close();
@@ -42,6 +43,7 @@ public class DebuggerLogfile extends AbstrakteKomponente{
         }
         
        
+        
        
         
         

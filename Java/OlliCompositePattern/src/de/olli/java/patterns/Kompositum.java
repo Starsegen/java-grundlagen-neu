@@ -5,71 +5,86 @@
  */
 package de.olli.java.patterns;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 
 /**
  *
  * @author Oliver Stabenow <starsegen1987@hotmail.de>
  */
-public class Kompositum extends AbstrakteKomponente{
+public class Kompositum extends AbstrakteKomponente {
 
-    List<AbstrakteKomponente> kindKnoten = null;
+    Map<Integer, AbstrakteKomponente> kindKnoten = null;
     
-    public Kompositum(){
-        
-        
+
+    public Kompositum() {
+
         /**
          * durch den Konstruktor wird eine leere Liste die kindKnoten erzeugen
          */
-        this.kindKnoten = new ArrayList<>();
+        this.kindKnoten = new TreeMap<>();
     }
-    
-    
+
     /**
      * die Methode fügt neue Kindknoten hinzu
-     * 
-     * Kindknoten dürfen alle Objekte von Klassen sein, die von AbstraktenKomponenten
-     * abgeleitet sind (Polymorphie)
-     * 
+     *
+     * Kindknoten dürfen alle Objekte von Klassen sein, die von
+     * AbstraktenKomponenten abgeleitet sind (Polymorphie)
+     *
      * k darf sein: DegubberEmail, DebuggerSMS, DebuggerLogfile ODER Kompositum
-     * 
-     * @param k 
+     *
+     * @param i
+     * @param k
      */
-    public void hinzufuegen(AbstrakteKomponente k){
-        
-        this.kindKnoten.add(k);
+    public void hinzufuegen(int i, AbstrakteKomponente k) {
+
+        this.kindKnoten.put(i, k);
     }
-    
-    
+
     /**
      * die Methode entfernt einen Kindknoten aus dem Kompositum
-     * 
+     *
      * Todo: entfernen muss ggfs. auch die Unterknoten untersuchen
-     * 
-     * @param k 
+     *
+     * @param key
+     * @return 
      */
-    public void entfernen(AbstrakteKomponente k){
-       
+    public boolean entfernen(Integer key) {
+
         //fals keine Kindknoten da sind
-        if(this.kindKnoten.isEmpty()){
-            return;
+        if (this.kindKnoten.containsKey(key)) {
+            this.kindKnoten.remove(key);
+            return true;
+        } else {
+            Set<Integer> keySet = this.kindKnoten.keySet();
+
+            for (Integer i : keySet) {
+                if (this.getClass() == this.kindKnoten.get(i).getClass()) {
+
+                    Kompositum k = (Kompositum) this.kindKnoten.get(i);
+
+                    if (k.entfernen(key)) {
+                        return true;
+                    }
+                }
+            }
         }
-        
-        this.kindKnoten.remove(k);
+
+        return false;
     }
-    
+
     @Override
     public void methodeA() {
-     
+        Set<Integer> keySet = this.kindKnoten.keySet();
         //wir lassen **ALLE** abstrakten Komponenten die methodeA() ausführen
         //d.h.:     im Falle eines Degubbers folgt eine Ausgabe
         //          im Falle eines Kompositums lässt das dann wieder alle abstrakten
         //              die methodeA() ausführen
-        for( AbstrakteKomponente k: this.kindKnoten){
-            
-            k.methodeA();
+        for (Integer i : keySet) {
+
+            this.kindKnoten.get(i).methodeA();
         }
+
     }
-    
 }
