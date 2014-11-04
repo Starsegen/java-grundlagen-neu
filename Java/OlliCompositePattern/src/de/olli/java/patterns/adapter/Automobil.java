@@ -11,13 +11,13 @@ package de.olli.java.patterns.adapter;
  */
 public class Automobil {
     
-    private int kilometerstand = 0;
+    int kilometerstand = 0;
     
-    private String farbe = "";
+    String farbe = "";
     
-    private String hersteller = "";
+    String hersteller = "";
     
-    private int hoechstGeschwindigkeit = 0; 
+    int hoechstGeschwindigkeit = 0; 
             
             
     public Automobil(String h, String f, int k, int vmax){
