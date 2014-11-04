@@ -9,18 +9,20 @@ package de.olli.java.patterns.adapter;
  *
  * @author Oliver Stabenow <starsegen1987@hotmail.de>
  */
-public class Adapter extends Automobil implements Vehicle{
-    
+public class Adapter implements Vehicle {
 
-    public Adapter(String h, String f, int k, int vmax) {
-        super(h, f, k, vmax);
-        
+    private String hersteller = "";
+    private String farbe = "";
+    private int kilometerstand = 0;
+    private int hoechstGeschwindigkeit = 0;
+
+    private Adapter(String h, String f, int k, int vmax) {
+
         this.hersteller = h;
         this.farbe = f;
         this.kilometerstand = k;
         this.hoechstGeschwindigkeit = vmax;
-        
-        
+
     }
 
     @Override
@@ -40,7 +42,7 @@ public class Adapter extends Automobil implements Vehicle{
 
     @Override
     public int getMileage() {
-    
+
         return this.kilometerstand;
     }
 
@@ -51,23 +53,20 @@ public class Adapter extends Automobil implements Vehicle{
 
     @Override
     public String getManufacturer() {
-    
+
         return this.hersteller;
     }
 
     @Override
     public String getColor() {
-    
+
         return this.farbe;
     }
 
     @Override
     public int getMaxSpeed() {
-     
+
         return this.hoechstGeschwindigkeit;
     }
-    
-    
-    
-    
+
 }

@@ -28,6 +28,8 @@ public class Automobil {
         this.hoechstGeschwindigkeit = vmax;
         
     }
+
+    
     
     public int getKilometerstand(){
         
