@@ -48,9 +48,7 @@ public class composite {
         
         k.entfernen(12);
         //das "zusammengesetzte Debugger-Objekt betrachten wir nun im Ganzen
-        
-        
-        
+      
         k.methodeA();
     }
     
