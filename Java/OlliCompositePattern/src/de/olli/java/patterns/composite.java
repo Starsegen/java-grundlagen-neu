@@ -5,6 +5,9 @@
  */
 package de.olli.java.patterns;
 
+import de.olli.java.patterns.*;
+import de.olli.java.patterns.decorator.Car;
+import de.olli.java.patterns.decorator.Spoiler;
 import java.io.IOException;
 
 /**
@@ -46,10 +49,33 @@ public class composite {
         k.hinzufuegen(12,new DebuggerSMS());
         
         
-        k.entfernen(12);
+        k.entfernen(32);
         //das "zusammengesetzte Debugger-Objekt betrachten wir nun im Ganzen
       
         k.methodeA();
+        
+        
+        
+        
+        
+        Car autoA = new Car("BMW", "schwarz", 250);
+        
+        System.out.println("autoA: " + autoA.getManufacturer() + ", " + autoA.getMaxSpeed() + ", " + autoA.getDailyRate(8));
+        
+        Spoiler prollAuto = new Spoiler(autoA);
+        
+        System.out.println("prollAuto: " + prollAuto.getManufacturer() + ", " + prollAuto.getMaxSpeed() + "km/h , " + prollAuto.getDailyRate(8));
+    
+        Spoiler oberProllAuto = new Spoiler(prollAuto);
+        
+        System.out.println("oberProllAuto: " + oberProllAuto.getManufacturer() + ", " + oberProllAuto.getMaxSpeed() + "km/h , " + oberProllAuto.getDailyRate(8));
+        
+        
     }
+    
+    
+    
+    
+    
     
 }
