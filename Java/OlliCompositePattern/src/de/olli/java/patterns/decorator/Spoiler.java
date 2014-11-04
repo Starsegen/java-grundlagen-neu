@@ -30,7 +30,7 @@ public class Spoiler extends VehicleDecorator{
     @Override
     public int getMaxSpeed(){
         
-        return this.vehicle.getMaxSpeed() +(this.vehicle.getMaxSpeed()/100*15);
+        return this.vehicle.getMaxSpeed() +15;
     }
     
     
